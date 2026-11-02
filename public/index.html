@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080912">
+  <meta name="description" content="PARALLAX. The Butterfly Effect of Twitch. Your chat creates two futures. Only one survives.">
+  <title>PARALLAX — The Butterfly Effect of Twitch</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a href="/" class="brand" aria-label="Parallax studio home">
+        <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-name">PARALLAX<span class="brand-dot">.</span></span>
+        <span class="brand-caption">THE BUTTERFLY EFFECT OF TWITCH</span>
+      </a>
+      <div class="top-nav"><span class="nav-label active"><span class="pulse-dot"></span> LIVE STUDIO</span><a href="/overlay" target="_blank" rel="noopener" class="nav-label">↗ OBS OVERLAY</a><a href="/how" class="nav-label">HOW IT WORKS ↗</a></div>
+      <div id="live-pill" class="connection-pill"><span class="status-led"></span><span id="connection-text">SIMULATION MODE</span></div>
+    </header>
+
+    <main class="workspace">
+      <section class="main-column">
+        <div class="section-heading"><div><span class="micro-label">01 / THE LIVE EXPERIENCE</span><div class="section-title">Reality engine <span class="muted-inline">/ stage</span></div></div><div class="session-ident">SESSION <span id="session-no">001</span> <span class="small-divider">/</span> <span id="phase-label">STANDBY</span></div></div>
+        <div class="stage" id="stage">
+          <canvas id="cosmos" aria-label="Animated visualization of two parallel futures"></canvas>
+          <div class="scanlines" aria-hidden="true"></div>
+          <div class="stage-header"><span class="stage-badge"><span class="yellow-dot"></span> SIGNAL FROM THE MULTIVERSE</span><span class="coords">WORLD DNA / <span id="world-dna">0137</span></span></div>
+          <div id="preview-banner" class="preview-banner" hidden><span><strong>WHAT-IF PREVIEW</strong><span id="preview-caption"></span></span><button id="return-live" type="button">RETURN TO LIVE ↗</button></div>
+          <div class="hero">
+            <span class="hero-kicker"><span class="line-accent"></span> THE FUTURE IS A COLLECTIVE ACT</span>
+            <h1 id="hero-heading">One chat.<br><em>Infinite futures.</em></h1>
+            <p id="hero-subtitle">Every voice becomes a star. Every decision changes the world. Two realities await — your community makes one real.</p>
+          </div>
+          <div class="reality-section">
+            <div class="reality-header"><span>THE SPLIT REALITY</span><span id="reality-time"><span class="timer-dot"></span> AWAITING ACTIVATION</span></div>
+            <div class="realities">
+              <div class="reality-card reality-a" id="realm-a">
+                <div class="realm-num">01 <span>— THE PATH OF GROWTH</span></div>
+                <div class="realm-name" id="name-a">AURORA</div>
+                <div class="realm-desc" id="desc-a">A world that learns to bloom</div>
+                <div class="realm-footer"><span class="percent" id="percent-a">50<small>%</small></span><span class="live-votes" id="votes-a">0 SIGNALS</span></div>
+                <div class="vote-track"><div id="bar-a" class="vote-fill"></div></div>
+              </div>
+              <div class="versus"><span>VS</span><div class="versus-line"></div></div>
+              <div class="reality-card reality-b" id="realm-b">
+                <div class="realm-num">02 <span>— THE PATH OF CHAOS</span></div>
+                <div class="realm-name" id="name-b">SUPERNOVA</div>
+                <div class="realm-desc" id="desc-b">A world that dares to burn</div>
+                <div class="realm-footer"><span class="percent" id="percent-b">50<small>%</small></span><span class="live-votes" id="votes-b">0 SIGNALS</span></div>
+                <div class="vote-track"><div id="bar-b" class="vote-fill"></div></div>
+              </div>
+            </div>
+            <div class="stage-lower"><div class="stage-note"><span class="asterisk">✳</span> REALITY IS SHAPED BY THE PEOPLE IN IT</div><div class="spark-label" id="spark-text">SEND <strong>!SPARK HOPE</strong> TO LEAVE A MARK</div></div>
+          </div>
+          <div id="reveal" class="reveal" aria-live="polite" hidden>
+            <div class="reveal-outer"><span class="reveal-top">WORLDLINE CONFIRMED</span><div class="reveal-icon">✳</div><h2 id="reveal-title">AURORA</h2><p>HAS BECOME REALITY.</p><span id="reveal-detail" class="reveal-detail">THE FUTURE REMEMBERS YOU.</span><button id="reveal-dismiss" class="reveal-dismiss">BACK TO THE MULTIVERSE ↗</button></div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="metric-icon">◈</div><div><div class="metric-value" id="metric-viewers">000</div><div class="metric-label">VOTES CAST ACROSS TIMELINES</div></div></div>
+          <div class="metric"><div class="metric-icon">↗</div><div><div class="metric-value" id="metric-memory">000</div><div class="metric-label">WORDS ENCODED INTO DNA</div></div></div>
+          <div class="metric"><div class="metric-icon">◎</div><div><div class="metric-value"><span id="metric-harmony">50</span><small>%</small></div><div class="metric-label">UNIVERSE HARMONY</div></div></div>
+          <div class="metric metric-last"><div class="metric-icon">✳</div><div><div class="metric-value" id="metric-worlds">00</div><div class="metric-label">TIMELINES MADE CANON</div></div></div>
+        </div>
+        <section class="butterfly-lens" id="butterfly-lens" aria-labelledby="lens-title" hidden>
+          <div class="lens-heading"><div><span class="micro-label">02 / THE BUTTERFLY LENS</span><h2 id="lens-title">The future you didn't choose.</h2><p>One shared past. Two possible consequences.</p></div><span class="lens-round" id="lens-round"></span></div>
+          <div class="lens-origin"><span>SHARED ORIGIN <strong id="lens-origin"></strong></span><span class="lens-gene" id="lens-gene"></span></div>
+          <div class="lens-futures">
+            <article class="lens-future canonical"><canvas id="lens-canon-cosmos" class="lens-cosmos" aria-label="Visualization of the canonical future"></canvas><div class="lens-future-content"><span class="lens-state">● MADE REAL BY CHAT</span><h3 id="lens-canon-name"></h3><div class="lens-harmony"><strong id="lens-canon-harmony"></strong><span>HARMONY</span></div><div class="lens-meter"><span id="lens-canon-meter"></span></div><div class="lens-fingerprint" id="lens-canon-dna"></div><button id="view-canon" type="button" class="lens-button">REVISIT THIS MOMENT ↗</button></div></article>
+            <article class="lens-future unlived"><canvas id="lens-other-cosmos" class="lens-cosmos" aria-label="Visualization of the unchosen what-if future"></canvas><div class="lens-future-content"><span class="lens-state">◇ UNLIVED · WHAT-IF PREVIEW</span><h3 id="lens-other-name"></h3><div class="lens-harmony"><strong id="lens-other-harmony"></strong><span>HARMONY</span></div><div class="lens-meter"><span id="lens-other-meter"></span></div><div class="lens-fingerprint" id="lens-other-dna"></div><button id="view-other" type="button" class="lens-button">ENTER THE UNLIVED FUTURE ↗</button></div></article>
+          </div>
+          <div class="lens-note"><span>✳</span><p id="lens-difference"></p><span>READ-ONLY LENS · YOUR STREAM STAYS LIVE</span></div>
+        </section>
+        <section class="lower-panel">
+          <div class="lower-heading"><div><div class="micro-label">03 / A LIVING MEMORY</div><h2>The universe remembers.</h2><p>Every choice leaves a trace. Revisit any recorded worldline.</p></div><div class="history-sub">PREVIOUS WORLDLINES <span>↘</span></div></div>
+          <div id="history" class="history-list"><div class="history-empty">NOTHING HAS HAPPENED YET <span>✳</span> BE THE FIRST TO CHANGE EVERYTHING.</div></div>
+        </section>
+      </section>
+
+      <aside class="sidebar">
+        <div class="aside-heading"><div><span class="micro-label">MISSION CONTROL</span><h2>Director's desk<span>.</span></h2></div><span class="desk-icon">⌘</span></div>
+        <section class="side-card status-card"><div class="side-label">CONNECTION STATUS <span class="square-icon">◫</span></div><div class="live-status"><div class="big-status-dot" id="status-dot"></div><div><div id="status-text" class="status-headline">Offline simulation</div><div id="status-helper" class="status-description">No account needed to explore.</div></div></div><div class="channel-line"><span>CONNECTED CHANNEL</span><strong id="channel-text">DEMO UNIVERSE</strong></div></section>
+        <section class="side-card director-card"><div class="side-label">CONTROL THE NARRATIVE <span>01—04</span></div><p class="side-copy">Open a rift. Let the community decide. Then collapse the timelines into one.</p><div class="duration-line"><label for="duration">VOTING WINDOW</label><select id="duration"><option value="20">20 SECONDS</option><option value="30">30 SECONDS</option><option value="45" selected>45 SECONDS</option><option value="60">60 SECONDS</option><option value="90">90 SECONDS</option></select></div>
+          <button id="start-btn" class="action action-primary"><span class="button-sigil">✳</span><span>OPEN THE RIFT</span><span>↗</span></button>
+          <button id="simulate-btn" class="action action-light"><span class="button-sigil">◌</span><span>SIMULATE 16 VIEWERS</span><span>↗</span></button>
+          <button id="collapse-btn" class="action action-dark" disabled><span class="button-sigil">◈</span><span>COLLAPSE REALITY</span><span>↗</span></button>
+          <div class="control-footer"><button id="reset-btn">↺ RESET WORLD</button><span id="director-feedback">READY FOR INPUT</span></div>
+        </section>
+        <section class="side-card command-card"><div class="side-label">TWITCH CHAT COMMANDS <span class="chat-glyph">#</span></div><div class="command"><code>!a</code><span>Vote for <strong id="cmd-a">Aurora</strong></span><span class="command-square aqua"></span></div><div class="command"><code>!b</code><span>Vote for <strong id="cmd-b">Supernova</strong></span><span class="command-square coral"></span></div><div class="command"><code>!spark hope</code><span>Plant a word in the world</span><span class="command-square white"></span></div><div class="command-note">ONE VIEWER. ONE VOTE. INFINITE CONSEQUENCES.</div></section>
+        <section class="side-card live-feed"><div class="side-label">THE BUTTERFLY FEED <span class="feed-live"><i></i> LIVE</span></div><div id="feed" class="feed-items" aria-live="polite"><div class="empty-feed">Waiting for the first ripple...</div></div></section>
+        <section class="aside-tip"><span>✳</span><p>For your stream: open <a href="/overlay" target="_blank" rel="noopener">OBS Overlay ↗</a> as a Browser Source. The same world appears live on air.</p></section>
+        <details class="secret-details"><summary>Secured remote hosting? Enter director key</summary><label>CONTROL_KEY <input id="control-key" type="password" autocomplete="off" placeholder="Enter secret for controls"></label></details>
+      </aside>
+    </main>
+    <footer class="footer"><span>PARALLAX<span class="brand-dot">.</span> <span class="footer-muted">EVERY CHAT HAS A UNIVERSE INSIDE IT.</span></span><span class="footer-muted">BUILT FOR TWITCH × CODEX HACKATHON 2026 <span class="foot-star">✳</span></span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/cosmos.js"></script><script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+'use strict';
+// Optional development check; production has no external dependencies.
+const assert = require('node:assert/strict');
+const fs = require('node:fs/promises');
+const path = require('node:path');
+const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const base = process.env.PARALLAX_URL || 'http://127.0.0.1:3000';
+(async () => {
+  await fs.mkdir('artifacts', {recursive:true});
+  const browser = await chromium.launch({channel:process.env.BROWSER_CHANNEL || 'msedge',headless:true});
+  const page = await browser.newPage({viewport:{width:1600,height:1100}});
+  const errors=[];
+  page.on('pageerror', error=>errors.push(error.message));
+  try {
+    await page.goto(base);
+    await page.waitForFunction(()=>document.querySelector('#connection-text').textContent==='SIMULATION MODE');
+    const command=async data=>{
+      const response=await page.request.post(base+'/api/director',{data});
+      assert.equal(response.status(),200);
+      return (await response.json()).state;
+    };
+    await command({action:'reset'});
+    await page.locator('#start-btn').click();
+    await page.locator('#simulate-btn').click();
+    await page.waitForFunction(()=>Number(document.querySelector('#metric-viewers').textContent)>=16);
+    await page.screenshot({path:'artifacts/studio-voting.png',fullPage:true});
+    const overlay=await browser.newPage({viewport:{width:1920,height:1080}});
+    overlay.on('pageerror',e=>errors.push(e.message));
+    await overlay.goto(base+'/overlay');
+    await overlay.waitForFunction(()=>document.body.textContent.includes('SIMULATION') || document.body.textContent.includes('DEMO'));
+    await overlay.screenshot({path:'artifacts/obs-overlay.png'});
+    await page.locator('#collapse-btn').click();
+    await page.locator('#reveal').waitFor({state:'visible'});
+    await page.screenshot({path:'artifacts/collapse.png',fullPage:true});
+    await page.locator('#reveal-dismiss').click();
+    await page.locator('#butterfly-lens').waitFor({state:'visible'});
+    const before=(await (await page.request.get(base+'/api/state')).json());
+    assert.equal(before.history[0].before.harmony,50);
+    assert.equal(Object.keys(before.history[0].futures).length,2);
+    await page.locator('#butterfly-lens').screenshot({path:'artifacts/butterfly-lens.png'});
+    await page.locator('#view-other').click();
+    await page.locator('#preview-banner').waitFor({state:'visible'});
+    assert.match(await page.locator('#hero-heading').innerText(),/never lived/);
+    const after=(await (await page.request.get(base+'/api/state')).json());
+    assert.deepEqual(after.world,before.world,'What-if preview cannot mutate the canonical universe');
+    await page.screenshot({path:'artifacts/unchosen-future.png',fullPage:true});
+    await page.locator('#return-live').click();
+    await page.locator('#preview-banner').waitFor({state:'hidden'});
+    await page.locator('#start-btn').click();
+    await page.waitForFunction(()=>document.querySelector('#phase-label').textContent==='VOTING');
+    const next=await (await page.request.get(base+'/api/state')).json();
+    assert.deepEqual(next.world,before.world,'Next round inherits the actual chosen world');
+    assert.equal(next.theme.a.name,'ECHO');
+    await page.setViewportSize({width:390,height:844});
+    await page.screenshot({path:'artifacts/mobile.png',fullPage:true});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),true,'No mobile horizontal overflow');
+    await page.emulateMedia({reducedMotion:'reduce'});
+    await page.reload();
+    await page.locator('#start-btn').waitFor();
+    assert.deepEqual(errors,[]);
+    await fs.writeFile('artifacts/browser-qa.json',JSON.stringify({passed:true,checks:['voting','overlay','collapse','counterfactual preview is read-only','next-round inheritance','mobile layout','reduced motion','no page errors'],at:new Date().toISOString()},null,2));
+    console.log('Browser QA passed: complete round, OBS sync, read-only counterfactual, inherited world, mobile, reduced motion.');
+  } finally { await browser.close(); }
+})().catch(error=>{console.error(error);process.exitCode=1;});

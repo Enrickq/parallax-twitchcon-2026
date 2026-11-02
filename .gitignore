@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.DS_Store
+*.log
+coverage/
+video/*.mp4
+video/*.wav
+video/*.png
+video/frames/
+artifacts/*.png
+artifacts/*.log
+
+.parallax-data.json
+.parallax-data.json.tmp

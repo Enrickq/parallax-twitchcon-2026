@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "voting",
+    "overlay",
+    "collapse",
+    "counterfactual preview is read-only",
+    "next-round inheritance",
+    "mobile layout",
+    "reduced motion",
+    "no page errors"
+  ],
+  "at": "2026-11-02T18:50:54.176Z"
+}

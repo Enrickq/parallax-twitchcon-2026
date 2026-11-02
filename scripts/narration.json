@@ -1,0 +1,12 @@
+[
+ {"file":"01-hook.wav","start":0,"duration":8,"text":"Your chat scrolls away. What if its choices stayed? This is Parallax: the Butterfly Effect of Twitch."},
+ {"file":"02-choice.wav","start":8,"duration":12,"text":"A streamer opens a rift between two possible futures. Viewers choose a timeline with exclamation A or B, and plant a word with the spark command."},
+ {"file":"03-signals.wav","start":20,"duration":12,"text":"Every signal changes the universe on screen. This rehearsal uses clearly labelled simulated viewers. The separate Twitch connector reads authenticated chat, and the overlay updates in real time."},
+ {"file":"04-collapse.wav","start":32,"duration":8,"text":"Then, reality collapses. One future becomes canon. The winning branch changes harmony, memory, and the world's visual genome."},
+ {"file":"05-lens.wav","start":40,"duration":15,"text":"But what happened to the future the community never chose? The Butterfly Lens calculates both consequences from the same starting world, using the same words and participation. Now, you can compare them."},
+ {"file":"06-unlived.wav","start":55,"duration":13,"text":"Step into the unlived future. This is a clearly labelled, read only what if. Explore its different harmony and genome. The real shared world and the stream remain unchanged."},
+ {"file":"07-memory.wav","start":68,"duration":12,"text":"Return to the present, and open the next round. New possibilities appear inside the universe your community already made. Its memory, harmony and visual D N A carry forward."},
+ {"file":"08-history.wav","start":80,"duration":10,"text":"The world remembers. Recorded outcomes survive a server restart. Revisit a retained worldline, compare its alternatives, and see how the community shaped its history."},
+ {"file":"09-codex.wav","start":90,"duration":17,"text":"We used Codex to build the counterfactual mechanics, the interactive lens, stronger Twitch connection checks, and automated tests. These are actual build artifacts. The final contest video still needs real Twitch footage and a recording of the Codex screen."},
+ {"file":"10-close.wav","start":107,"duration":9,"text":"The audience didn't watch this universe. They made it. One chat. Infinite futures. Parallax."}
+]

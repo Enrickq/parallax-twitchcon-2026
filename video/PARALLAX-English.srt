@@ -1,0 +1,111 @@
+1
+00:00:00,180 --> 00:00:03,955
+Your chat scrolls away. What if its choices stayed? This is
+
+2
+00:00:03,955 --> 00:00:07,730
+Parallax: the Butterfly Effect of Twitch.
+
+3
+00:00:08,180 --> 00:00:12,030
+A streamer opens a rift between two possible futures. Viewers choose
+
+4
+00:00:12,030 --> 00:00:15,880
+a timeline with exclamation A or B, and plant a word
+
+5
+00:00:15,880 --> 00:00:19,730
+with the spark command.
+
+6
+00:00:20,180 --> 00:00:24,030
+Every signal changes the universe on screen. This rehearsal uses clearly
+
+7
+00:00:24,030 --> 00:00:27,880
+labelled simulated viewers. The separate Twitch connector reads authenticated chat, and
+
+8
+00:00:27,880 --> 00:00:31,730
+the overlay updates in real time.
+
+9
+00:00:32,180 --> 00:00:35,955
+Then, reality collapses. One future becomes canon. The winning branch changes
+
+10
+00:00:35,955 --> 00:00:39,730
+harmony, memory, and the world's visual genome.
+
+11
+00:00:40,180 --> 00:00:45,030
+But what happened to the future the community never chose? The
+
+12
+00:00:45,030 --> 00:00:49,880
+Butterfly Lens calculates both consequences from the same starting world, using
+
+13
+00:00:49,880 --> 00:00:54,730
+the same words and participation. Now, you can compare them.
+
+14
+00:00:55,180 --> 00:00:59,363
+Step into the unlived future. This is a clearly labelled, read
+
+15
+00:00:59,363 --> 00:01:03,547
+only what if. Explore its different harmony and genome. The real
+
+16
+00:01:03,547 --> 00:01:07,730
+shared world and the stream remain unchanged.
+
+17
+00:01:08,180 --> 00:01:12,030
+Return to the present, and open the next round. New possibilities
+
+18
+00:01:12,030 --> 00:01:15,880
+appear inside the universe your community already made. Its memory, harmony
+
+19
+00:01:15,880 --> 00:01:19,730
+and visual D N A carry forward.
+
+20
+00:01:20,180 --> 00:01:23,363
+The world remembers. Recorded outcomes survive a server restart. Revisit a
+
+21
+00:01:23,363 --> 00:01:26,547
+retained worldline, compare its alternatives, and see how the community shaped
+
+22
+00:01:26,547 --> 00:01:29,730
+its history.
+
+23
+00:01:30,180 --> 00:01:34,318
+We used Codex to build the counterfactual mechanics, the interactive lens,
+
+24
+00:01:34,318 --> 00:01:38,455
+stronger Twitch connection checks, and automated tests. These are actual build
+
+25
+00:01:38,455 --> 00:01:42,593
+artifacts. The final contest video still needs real Twitch footage and
+
+26
+00:01:42,593 --> 00:01:46,730
+a recording of the Codex screen.
+
+27
+00:01:47,180 --> 00:01:51,455
+The audience didn't watch this universe. They made it. One chat.
+
+28
+00:01:51,455 --> 00:01:55,730
+Infinite futures. Parallax.
